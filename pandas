@@ -1,0 +1,8 @@
+
+import pandas as pd
+pd.DataFrame(list(sent_score.items()),columns=['Sentence','Score'])
+from heapq import nlargest
+
+num_sentences =3
+n=nlargest(num_sentences,sent_score,key=sent_score.get)
+" ".join(n)

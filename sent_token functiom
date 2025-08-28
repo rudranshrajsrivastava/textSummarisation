@@ -1,0 +1,14 @@
+sent_token=[sent.text for sent in doc.sents]
+sent_token
+
+sent_score={}
+for sent in sent_token:
+  for word in sent.split():
+    if word.lower() in word_freq.keys():
+          if sent not in sent_score.keys():
+            sent_score[sent]=word_freq[word]
+          else:
+            sent_score[sent]+=word_freq[word]
+            print(word)
+
+            sent_score

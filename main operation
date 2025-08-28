@@ -1,0 +1,29 @@
+!pip install ipywidgets
+
+import ipywidgets as widgets
+from IPython.display import display
+
+# Create input widgets
+text_input = widgets.Textarea(description="Enter text:")
+num_sentences_input = widgets.IntSlider(min=1, max=10, value=3, description="Number of sentences:")
+
+# Create output widget
+output_text = widgets.HTML()
+
+# Define a function to summarize the text
+def summarize_text(button):
+  # Get the text and number of sentences from the input widgets
+  text = text_input.value
+  num_sentences = num_sentences_input.value
+
+  # Your text summarization logic here (using your existing code)
+
+  # Store the summarization results in the output widget
+  output_text.value = " ".join(nlargest(num_sentences,sent_score,key=sent_score.get))
+
+# Create a button to trigger the summarization
+summarize_button = widgets.Button(description="Summarize")
+summarize_button.on_click(summarize_text)
+
+# Display the widgets
+display(text_input, num_sentences_input, summarize_button, output_text)

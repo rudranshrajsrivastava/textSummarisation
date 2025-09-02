@@ -1,1 +1,2 @@
 here we have used NLP and specifically spacy as the main framework required for implementation of the project
+however pytorch could also be used but spacy helps us in modifying the approach
